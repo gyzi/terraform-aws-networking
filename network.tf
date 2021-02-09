@@ -34,10 +34,10 @@ resource "aws_internet_gateway" "rhel-ig" {
   }
 }
 
-resource "aws_eip" "rhel-eip" {
+/* resource "aws_eip" "rhel-eip" {
   vpc      = true
 }
 resource "aws_nat_gateway" "rhel-natgw" {
   allocation_id = aws_eip.rhel-eip.id
   subnet_id     = aws_subnet.rhel-sub-pub.id
-} 
+}  */

@@ -1,4 +1,4 @@
-
+/* 
 resource "aws_security_group" "allow_web" {
   name        = "allow_web"
   description = "Allow web inbound traffic"
@@ -40,4 +40,4 @@ resource "aws_network_acl" "rhel-nacl" {
   tags = {
     Name = "rhel-nacl"
   }
-}
+} */
