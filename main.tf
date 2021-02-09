@@ -23,15 +23,15 @@ data "aws_info" "tuts" {
 }
 
 resource "aws_instance" "tuts-ec2" { 
-  instance_ami = data.aws_info.tuts.id
-  instance_type = data.aws_info
+  instance_ami = data.aws_info.tuts.instance_ami
+  instance_type = data.aws_info.tuts.instance_type
   tags = {
     phase = "staging"
   }
 }
 
 output "ec2-data" {
-  value = data.aws_instance.tuts
+  value = data.aws_instance.tuts-ec2
 }
 /* output "ec2-pub-ip" {
     value = aws_instance.web.public_ip
