@@ -7,8 +7,8 @@ provider "aws" {
 
 data "aws_instance" "tuts" {
   filter {
-    name = "tags:env"
-    value = ["odoo"]
+    name = "tag:env"
+    values = ["odoo"]
   }
 }
 
