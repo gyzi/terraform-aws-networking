@@ -7,15 +7,24 @@ provider "aws" {
   secret_key = var.my_secret_key
 }
 
-data "aws_instance" "tuts" {
+data "aws_info" "tuts" {
   filter {
     name = "tag:env"
     values = ["odoo"]
   }
+  filter {
+    name = "instance_ami"
+    values = ["ami-0dc185deadd3ac449"]
+  }
+  filter {
+    name = "instanse_type"
+    values = ["t2.micro"]
+  }
 }
 
 resource "aws_instance" "tuts-ec2" { 
-  instance_ami = data.aws_instance.tuts.id
+  instance_ami = data.aws_info.tuts.id
+  instance_type = data.aws_info
   tags = {
     phase = "staging"
   }
