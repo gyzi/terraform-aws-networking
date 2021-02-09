@@ -1,16 +1,16 @@
 
 variable "vpc_cidr" {
-   cidr_block = string
+   type = string
    default = "10.0.0.0/16"
 }
 
 variable "pub_sub_cidr" {
-   cidr_block = string
+   type = string
    default = "10.0.0.0/24"
 }
 
 variable "priv_sub_cidr" {
-   cidr_block = string
+   type = string
    default = "10.0.1.0/24"
 }
 
@@ -23,14 +23,14 @@ variable "my_instance_tag" {
 }
 
 variable "instance_type" {
-   instance_type = string
+   type = string
    default = "t2.micro"
    description = "to set instance type"
 }
 
 variable "my_access_key" {
-   access_key = string
+   type = string
 }
 variable "my_secret_key" {
-   secret_key = string
+   type = string
 }
