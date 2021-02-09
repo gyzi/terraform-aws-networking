@@ -14,8 +14,8 @@ data "aws_instance" "tuts" {
   }
 }
 
-resource "aws_instance" "tuts-ec2" {
-  instance_id = data.aws_instance.tuts.id
+resource "aws_instance" "tuts-ec2" { 
+  instance_ami = data.aws_instance.tuts.id
   tags = {
     phase = "staging"
   }
