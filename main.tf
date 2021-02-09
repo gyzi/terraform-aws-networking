@@ -7,8 +7,8 @@ provider "aws" {
 
 data "aws_instance" "tuts" {
   filter {
-    name = "private_ip"
-    value = ["172.31.33.40"]
+    name = "tags:env"
+    value = ["odoo"]
   }
 }
 
