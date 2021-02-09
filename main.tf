@@ -7,7 +7,7 @@ provider "aws" {
   secret_key = var.my_secret_key
 }
 
-data "aws_info" "tuts" {
+data "aws_instance" "tuts" {
   filter {
     name = "tag:env"
     values = ["odoo"]
@@ -23,8 +23,8 @@ data "aws_info" "tuts" {
 }
 
 resource "aws_instance" "tuts-ec2" { 
-  instance_ami = data.aws_info.tuts.instance_ami
-  instance_type = data.aws_info.tuts.instance_type
+  instance_ami = data.aws_instance.tuts.instance_ami
+  instance_type = data.aws_instance.tuts.instance_type
   tags = {
     phase = "staging"
   }
