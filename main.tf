@@ -5,9 +5,13 @@ provider "aws" {
   region = "ap-northeast-1"
 }
 
-data "aws_instance" "i-03ac896b107a2367f" {
-  tags = var.my_instance_tag
+data "aws_instance" "tuts" {
+  filter {
+    name = "instance_id"
+    value = ["i-03ac896b107a2367f"]
+  }
 }
+
 
 
 output "ec2-data" {
