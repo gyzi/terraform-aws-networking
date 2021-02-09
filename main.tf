@@ -7,15 +7,14 @@ provider "aws" {
 
 data "aws_instance" "tuts" {
   filter {
-    name = "instance_id"
-    value = ["i-03ac896b107a2367f"]
+    name = "private_ip"
+    value = ["172.31.33.40"]
   }
 }
 
 
-
 output "ec2-data" {
-  value = data.aws_instance.i-03ac896b107a2367f
+  value = data.aws_instance.tuts
 }
 /* output "ec2-pub-ip" {
     value = aws_instance.web.public_ip
