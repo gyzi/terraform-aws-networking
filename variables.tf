@@ -17,7 +17,7 @@ variable "priv_sub_cidr" {
 variable "my_instance_tag" {
    type = object({
       Name = string
-      env  = number
+      version  = number
    })
    description = "This to set tag for resources"
 }
