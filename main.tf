@@ -3,6 +3,8 @@
 # t2.micro node with an AWS Tag naming it "odoo"
 provider "aws" {
   region = "ap-northeast-1"
+  access_key = var.my_access_key
+  secret_key = var.my_secret_key
 }
 
 data "aws_instance" "tuts" {
